@@ -4,6 +4,16 @@
 
 ---
 
+## 🧠 Current Statistical Model (Edge Engine)
+
+Deploying heavy Machine Learning models (like Neural Networks) on edge devices is expensive and slow. GridMind currently solves this using an **Ultra-lightweight Monte Carlo / Frequency-Based Statistical Model**:
+
+- **Online Learning:** The model does not require pre-training. It observes the first 20 readings of any meter (Warm-up Phase) to establish a mathematical baseline dynamically.
+- **Data Binning:** Continuous floating-point readings (e.g., 5.12 kWh) are grouped into bins (nearest integer).
+- **O(1) Time Complexity:** It calculates the historical frequency of every reading in constant time. If a new reading falls into a bin that occurs less than 5% of the time (e.g., a sudden drop to 0.01 kWh), it is instantly flagged as an anomaly.
+
+---
+
 ## 🏗️ Microservice Architecture
 
 The project is broken down into three completely decoupled microservices:
@@ -25,15 +35,6 @@ The project is broken down into three completely decoupled microservices:
 
 ---
 
-## 🧠 Current Statistical Model (Edge Engine)
-
-Deploying heavy Machine Learning models (like Neural Networks) on edge devices is expensive and slow. GridMind currently solves this using an **Ultra-lightweight Monte Carlo / Frequency-Based Statistical Model**:
-
-- **Online Learning:** The model does not require pre-training. It observes the first 20 readings of any meter (Warm-up Phase) to establish a mathematical baseline dynamically.
-- **Data Binning:** Continuous floating-point readings (e.g., 5.12 kWh) are grouped into bins (nearest integer).
-- **O(1) Time Complexity:** It calculates the historical frequency of every reading in constant time. If a new reading falls into a bin that occurs less than 5% of the time (e.g., a sudden drop to 0.01 kWh), it is instantly flagged as an anomaly.
-
----
 
 ## 🚀 Future Roadmap: Advanced ML Integration
 
