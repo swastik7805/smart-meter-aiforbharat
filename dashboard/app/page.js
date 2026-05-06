@@ -27,27 +27,29 @@ export default function Dashboard() {
     <div className="app">
       <Header edgeOnline={edgeOnline} />
 
-      {error && (
-        <div className="error-banner" id="error-banner">
-          DB connection error: {error}. Anomaly history unavailable.
-        </div>
-      )}
+      <div className="app-content">
+        {error && (
+          <div className="error-banner" id="error-banner">
+            DB connection error: {error}. Anomaly history unavailable.
+          </div>
+        )}
 
-      <StatsRow
-        totalAlerts={totalAlerts}
-        uniqueMeters={uniqueMeters}
-        latestTime={latestTime}
-        lastUpdated={lastUpdated}
-      />
+        <StatsRow
+          totalAlerts={totalAlerts}
+          uniqueMeters={uniqueMeters}
+          latestTime={latestTime}
+          lastUpdated={lastUpdated}
+        />
 
-      <LiveMeterGrid liveMeters={liveMeters} />
+        <LiveMeterGrid liveMeters={liveMeters} />
 
-      <AnomalyTable
-        anomalies={anomalies}
-        edgeOnline={edgeOnline}
-        liveMeters={liveMeters}
-        onClearHistory={clearHistory}
-      />
+        <AnomalyTable
+          anomalies={anomalies}
+          edgeOnline={edgeOnline}
+          liveMeters={liveMeters}
+          onClearHistory={clearHistory}
+        />
+      </div>
     </div>
   );
 }
