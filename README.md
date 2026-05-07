@@ -1,5 +1,5 @@
 # ⚡ GridMind: Edge-AI Smart Meter Anomaly Detection
-
+  
 **GridMind** is a real-time, edge-computing solution designed to instantly detect electricity theft, meter tampering, and grid faults. Instead of sending heavy streams of raw telemetry data to a central server, GridMind processes data directly at the edge (on the smart meter itself) and only transmits critical alerts to the central dashboard.
 
 ---
